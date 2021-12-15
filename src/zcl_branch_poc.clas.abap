@@ -11,7 +11,8 @@ CLASS zcl_branch_poc DEFINITION
     CLASS-METHODS:
       _get_data
         EXPORTING
-          ev_doc_no TYPE zde_doc_poc.
+          ev_doc_no TYPE zde_doc_poc
+          ev_desc   TYPE zde_desc_poc.
 ENDCLASS.
 
 
@@ -19,16 +20,17 @@ ENDCLASS.
 CLASS zcl_branch_poc IMPLEMENTATION.
 
   METHOD if_oo_adt_classrun~main.
-    DATA: lv_doc_no TYPE zde_doc_poc.
+    DATA: lv_desc   TYPE zde_desc_poc.
     me->_get_data(
       IMPORTING
-        ev_doc_no = lv_doc_no ).
+        ev_desc   = lv_desc ).
 
-    out->write( lv_doc_no ).
+    out->write( lv_desc ).
   ENDMETHOD.
 
   METHOD _get_data.
     ev_doc_no = '201'.
+    ev_desc   = |Hello { ev_doc_no }|.
   ENDMETHOD.
 
 ENDCLASS.
