@@ -29,7 +29,7 @@ CLASS zcl_branch_poc IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD _get_data.
-    ev_doc_no = '201'.
+    ev_doc_no = '0201'.
     ev_desc   = |Hello { ev_doc_no }|.
   ENDMETHOD.
 
